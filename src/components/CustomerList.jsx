@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { fetchCustomers, deleteCustomer } from "../api"; // Implement these in your API file
+import { fetchCustomers, deleteCustomer } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CustomersList = () => {
   const [customers, setCustomers] = useState([]);
-  const [search, setSearch] = useState(""); // Add search state
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove token from local storage
-    navigate("/"); // Redirect to login page
+    localStorage.removeItem("token");
+    navigate("/");
   };
 
   useEffect(() => {
@@ -38,7 +38,6 @@ const CustomersList = () => {
     }
   };
 
-  // Filter customers based on the search term
   const filteredCustomers = customers.filter((customer) =>
     customer.email.toLowerCase().includes(search.toLowerCase())
   );
@@ -55,7 +54,7 @@ const CustomersList = () => {
           <input
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)} // Handle search input
+            onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by email"
             className="w-full px-4 py-2 border rounded-lg"
           />

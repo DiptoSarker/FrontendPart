@@ -1,4 +1,3 @@
-// src/components/AddCustomer.js
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addCustomer } from "../api";

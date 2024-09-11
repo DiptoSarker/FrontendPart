@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS for react-toastify
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -63,7 +63,7 @@ const Login = () => {
           </a>
         </p>
       </div>
-      <ToastContainer /> {/* Add the ToastContainer component */}
+      <ToastContainer />
     </div>
   );
 };
